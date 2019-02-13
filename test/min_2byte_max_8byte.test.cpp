@@ -1,0 +1,2 @@
+//CFLAGS: -DWLDB_WRITE_SIZE_MIN=2 -DWLDB_WRITE_SIZE_MAX=8
+#include "unit.cpp"
