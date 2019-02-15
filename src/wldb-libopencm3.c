@@ -3,7 +3,7 @@
 
 #include <libopencm3/stm32/flash.h>
 
-#include <wldb-types.h>
+#include <wldb.h>
 
 // Use WLDB_WRITE_SIZE_MIN = 2
 
