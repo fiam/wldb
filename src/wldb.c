@@ -447,6 +447,8 @@ static int wldb_block_is_empty(wldb_t *db, wldb_addr_t start)
 
 static size_t wldb_record_size(const void *key, size_t key_size, const void *blob, size_t size)
 {
+    (void)key;
+
     size_t s = key_size + size;
     s += 1; // key length size
     if (blob && size > 0)
@@ -894,6 +896,8 @@ int wldb_commit(wldb_t *db)
 #if defined(WLDB_USE_WRITE_BUFFER)
     return wldb_flush_write_buffer(db);
 #else
+    (void)db;
+
     return 0;
 #endif
 }

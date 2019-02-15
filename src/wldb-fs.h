@@ -19,6 +19,8 @@ EXTERN_C int wldb_fs_erase_page(wldb_t *db, wldb_addr_t start, size_t size);
 #if defined(WLDB_RW_DIRECT_READ)
 static int wldb_fs_read8(wldb_t *db, wldb_addr_t addr, uint8_t *val)
 {
+    (void)db;
+
     uint8_t *p = (uint8_t *)addr;
     *val = *p;
     return 0;
@@ -31,16 +33,22 @@ EXTERN_C int wldb_fs_read8(wldb_t *db, wldb_addr_t addr, uint8_t *val);
 #if defined(WLDB_RW_DIRECT_WRITE)
 static int wldb_fs_write_begin(wldb_t *db)
 {
+    (void)db;
+
     return 0;
 }
 
 static int wldb_fs_write_end(wldb_t *db)
 {
+    (void)db;
+
     return 0;
 }
 
 static int wldb_fs_write_data(wldb_t *db, wldb_addr_t addr, const void *src, size_t size)
 {
+    (void)db;
+
     void *dst = (void *)addr;
     memcpy(dst, src, size);
     return size;

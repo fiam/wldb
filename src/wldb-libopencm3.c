@@ -9,6 +9,7 @@
 
 int wldb_fs_erase_page(wldb_t *db, wldb_addr_t start, size_t size)
 {
+    (void)db;
     (void)size;
 
     flash_unlock();
@@ -17,20 +18,28 @@ int wldb_fs_erase_page(wldb_t *db, wldb_addr_t start, size_t size)
     return 0;
 }
 
-int wldb_fs_begin_write(wldb_t *db, wldb_addr_t addr)
+int wldb_fs_write_begin(wldb_t *db, wldb_addr_t addr)
 {
+    (void)db;
+    (void)addr;
+
     flash_unlock();
     return 0;
 }
 
-int wldb_fs_end_write(wldb_t *db, wldb_addr_t addr)
+int wldb_fs_write_end(wldb_t *db, wldb_addr_t addr)
 {
+    (void)db;
+    (void)addr;
+
     flash_lock();
     return 0;
 }
 
 int wldb_fs_write_data(wldb_t *db, wldb_addr_t addr, const void *src, size_t size)
 {
+    (void)db;
+
     const uint16_t *p = (const uint16_t *)src;
     for (size_t ii = 0; ii < size; ii += 2, p++)
     {
