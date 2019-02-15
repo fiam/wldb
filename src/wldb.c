@@ -249,7 +249,6 @@ static int wldb_record_is_well_formed(wldb_t *db, wldb_addr_t pos,
 
     if (blob_size > 0)
     {
-        uint8_t bc;
         wldb_addr_t blob_end = pos + key_size + blob_size - 1;
         if ((ret = wldb_read8(db, blob_end, &c)) < 0)
         {
