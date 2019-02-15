@@ -88,7 +88,7 @@ static int wldb_flush_write_buffer(wldb_t *db)
             // We might need to add some padding. Since WLDB_WRITE_SIZE_MAX
             // has to be a multiple of WLDB_WRITE_SIZE_MIN, we always have
             // space at the end
-            size_t min_write = (req + WLDB_WRITE_SIZE_MIN - 1) / WLDB_WRITE_SIZE_MIN * WLDB_WRITE_SIZE_MIN;
+            int min_write = (req + WLDB_WRITE_SIZE_MIN - 1) / WLDB_WRITE_SIZE_MIN * WLDB_WRITE_SIZE_MIN;
             while (req < min_write)
             {
                 p[req] = WLDB_PADDING_BYTE;
