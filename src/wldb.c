@@ -737,7 +737,7 @@ int wldb_init(wldb_t *db,
     db->page_size = page_size;
     db->block_size = block_size;
 
-    db->block = NULL;
+    db->block = 0;
 
 #if defined(WLDB_USE_WRITE_BUFFER)
     db->write_buffer_addr = 0;
