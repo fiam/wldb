@@ -16,7 +16,7 @@ typedef struct wldb_s wldb_t;
 
 EXTERN_C int wldb_fs_erase_page(wldb_t *db, wldb_addr_t start, size_t size);
 
-#if defined(WLDB_RW_DIRECT_READ)
+#if defined(WLDB_FS_DIRECT_READ)
 static int wldb_fs_read8(wldb_t *db, wldb_addr_t addr, uint8_t *val)
 {
     (void)db;
@@ -30,7 +30,7 @@ static int wldb_fs_read8(wldb_t *db, wldb_addr_t addr, uint8_t *val)
 EXTERN_C int wldb_fs_read8(wldb_t *db, wldb_addr_t addr, uint8_t *val);
 #endif
 
-#if defined(WLDB_RW_DIRECT_WRITE)
+#if defined(WLDB_FS_DIRECT_WRITE)
 static int wldb_fs_write_begin(wldb_t *db)
 {
     (void)db;

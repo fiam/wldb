@@ -5,7 +5,7 @@
 
 #include <wldb.h>
 
-// Use WLDB_WRITE_SIZE_MIN = 2
+// Use with -DWLDB_WRITE_SIZE_MIN=2 -DWLDB_FS_DIRECT_READ
 
 int wldb_fs_erase_page(wldb_t *db, wldb_addr_t start, size_t size)
 {
